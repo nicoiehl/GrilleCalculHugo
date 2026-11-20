@@ -1,4 +1,4 @@
-const CACHE_NAME = 'grilles-calcul-v11-9';
+const CACHE_NAME = 'grilles-calcul-v11-10';
 const APP_SHELL = ['./', './index.html', './manifest.webmanifest'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(names => Promise.all(names.filter(name => name !== CACHE_NAME).map(name => caches.delete(name)))).then(() => self.clients.claim())); });
